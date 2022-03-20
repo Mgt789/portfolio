@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/respo.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <title>Protfolio</title>
+</head>
+
+<body>
+    <!-- nav section -->
+    <div class="container-fluid">
+        <header>
+
+            <nav id="menuToggle">
+                <div>
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <ul id="menu">
+
+                        <a href="./index.html" onclick="offNav()">
+                            <li>Home</li>
+                        </a>
+                        <a href="./summary.html" onclick="offNav()">
+                            <li>Summary</li>
+                        </a>
+                        <a href="./about.html" onclick="offNav()">
+                            <li>About</li>
+                        </a>
+                        <a href="./project.html" onclick="offNav()">
+                            <li>Project</li>
+                        </a>
+                        <a href="./contact.html" onclick="offNav()">
+                            <li>Contact</li>
+                        </a>
+
+                    </ul>
+                </div>
+            </nav>
+
+
+            <!-- banner section -->
+
+
+            <div class="container">
+                <div class="banner-text">
+
+                    <div class="text-container">
+                        <div class="heading-text-name">
+                            <i> Hey!!!</i>, I am <br>
+                            Chandan
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-section">
+                    <a class="btn btn-danger btn1" href="./contact.html" role="button">Contact me.</i></a>
+                    <a class="btn btn-outline-secondary text-white btn2" href="#" role="button">View CV</i></a>
+
+                </div>
+
+            </div>
+
+
+            <div class="social-icon mt-5">
+                <div class="row">
+                    <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12"></div>
+                    <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
+                        <a href="https://www.facebook.com/chandan.meher.948cm/" target="_blank"><i
+                                class="fa fa-facebook" aria-hidden="true"> </i></a>
+                        <a href="https://wa.me/6370137741" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true">
+                            </i></a>
+                        <a href="https://www.instagram.com/mr_antique_143/" target="_blank"><i class="fa fa-instagram"
+                                aria-hidden="true"></i></a>
+                        <a href="skype:cmeher20?chat" target="_blank"><i class="fa fa-skype" aria-hidden="true"></i></a>
+                        <a href="https://github.com/Mgt789" target="_blank"><i class="fa fa-github"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- own js -->
+        <script src="./js/main.js"></script>
+
+        <!-- navbar script -->
+        <script>
+            let height = window.innerHeight;
+            document.getElementById("menu").style.height = height + "px";
+        </script>
+
+
+</body>
+
+</html>

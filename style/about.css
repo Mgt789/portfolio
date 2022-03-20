@@ -1,0 +1,22 @@
+body{
+    background-color: rebeccapurple;
+    color: white;
+}
+
+.about-container{
+    display: flex;
+    justify-content: center;
+}
+
+.details{
+    width: 800px;
+    padding: 50px;
+}
+.details h1{
+    font-size: 3em;
+    text-align: center;
+    padding-bottom: 20px;
+}
+p{
+    font-size: 1.5em;
+}
