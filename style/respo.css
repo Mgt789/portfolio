@@ -1,5 +1,12 @@
 @media only screen and (max-width: 600px){
-
+    .heading-text-name h2 {
+        /* font-size: 45px; */
+        width: 100%;
+        font-size: 1.3em;
+    }
+    .heading-text-name .mask{
+        height: 105px;
+    }
     .banner-text{
         padding-top: 50%;
     }
@@ -9,8 +16,10 @@
     }
 
     .text-container{
-        height: 200px;
+        /* height: 200px; */
+        height: 350px;
         width: auto;
+        padding-top: 150px;
     }
     .navbar-content{
         color: white;
@@ -23,7 +32,7 @@
         text-align: center;
         justify-content: center;
         justify-items: center;
-        padding-top: 15%;
+        /* padding-top: 15%; */
     }
 }
 

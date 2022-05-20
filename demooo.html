@@ -54,6 +54,9 @@
                         <a href="./contact.html" onclick="offNav()">
                             <li>Contact</li>
                         </a>
+                        <a href="./Blog/CRUD/Crud.html" onclick="offNav()">
+                            <li>Blog</li>
+                        </a>
 
                     </ul>
                 </div>
@@ -68,8 +71,15 @@
 
                     <div class="text-container">
                         <div class="heading-text-name">
-                            <i> Hey!!!</i>, I am <br>
-                            Chandan
+                            <h2>
+                                Hey, I am
+                                <div class="mask">
+                                    <span data-show>Chandan</span>
+                                    <span>Meher</span>
+                                    <span>Developer</span>
+                                    <span>Designer</span>
+                                </div>
+                            </h2>
                         </div>
                     </div>
                 </div>
@@ -114,7 +124,23 @@
             document.getElementById("menu").style.height = height + "px";
         </script>
 
-        
+        <script>
+            setInterval(function () {
+                const show = document.querySelector('span[data-show]')
+                const next = show.nextElementSibling || document.querySelector('span:first-child')
+                const up = document.querySelector('span[data-up]')
+
+                if (up) {
+                    up.removeAttribute('data-up')
+                }
+
+                show.removeAttribute('data-show')
+                show.setAttribute('data-up', '')
+
+                next.setAttribute('data-show', '')
+            }, 2000);
+        </script>
+
 </body>
 
 </html>
