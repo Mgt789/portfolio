@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
 *,
 .container-fluid,
 .row {
@@ -29,6 +30,12 @@ body {
     text-align: center;
     background: white;
 }
+.header h1{
+    font-weight: bold;
+    font-family: 'Odibee Sans', cursive;
+    letter-spacing: 5px;
+    font-size: 2em;
+}
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
@@ -56,6 +63,9 @@ body {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
+}
+.card h2,h3{
+    font-family: 'Odibee Sans', cursive;
 }
 
 
@@ -102,7 +112,27 @@ body {
     }
 }
 
+/* readmore */
+#myBtn{
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #aaa;
+    font-weight: bold;
+    border: 2px solid black;
+}
 
+/* readmore-end */
 
+/* follow me  */
+.social{
+    display: flex;
+    flex-direction: row;
+}
+.card .bi{
+    font-size: 1.5em;
+    text-decoration: none;
+    padding: 0 10px;
+}
+/* follow me -end */
 
 

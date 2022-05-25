@@ -9,17 +9,23 @@
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 <!-- style  -->
 <link rel="stylesheet" href="./Crud.css">
 
-<title>Hello, world!</title>
+<!-- favicon -->
+<link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1216/1216708.png?w=740">
+
+
+<title>Blog page</title>
 </head>
 
 <body>
     <div class="container-fluid">
 
         <div class="header">
-            <h1>CRUD With MVC Core</h1>
+            <h1>BLOG</h1>
         </div>
 
         <div class="row">
@@ -35,7 +41,6 @@
                     </div>
 
 
-
                     <ul>
                         <li>
                             Create a MVC core application save give a proper path to store the project.
@@ -44,20 +49,18 @@
                             Open the project in visual studio and go to the solution explorer.
                         </li>
                         <li>Right click on Model and add a class with proper name like <strong> “Student”</strong>
-
-                            <!-- breakpoin -->
-                            <span id="dots">...</span><span id="more">
-
-                                Then define the all property you need in that table.
+                            Then define the all property you need in that table.
                         </li>
 
+                        <!-- breakpoin -->
+                        <span id="dots">...</span><span id="more">
 
 
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Student</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Student</span>
     {
         <span style="color: #0000CC">        [Key]</span>
                 <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> StudentID { <span style="color: #008800; font-weight: bold">get</span>; <span style="color: #008800; font-weight: bold">set</span>; }
@@ -79,162 +82,165 @@
                 <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> Mobile { <span style="color: #008800; font-weight: bold">get</span>; <span style="color: #008800; font-weight: bold">set</span>; }
             }
         </pre>
+                                </div>
+
+
                             </div>
 
+                            <li>Then we need to add some package for the project i.e:</li>
+                            <ol>
+                                <li>Entity Framework Core</li>
+                                <li>Entity Framework Core.Design</li>
+                                <li>Entity Framework Core.SqlServer</li>
+                                <li>Entity Framework Core.Tools</li>
 
-                        </div>
+                            </ol>
 
-                        <li>Then we need to add some package for the project i.e:</li>
-                        <ol>
-                            <li>Entity Framework Core</li>
-                            <li>Entity Framework Core.Design</li>
-                            <li>Entity Framework Core.SqlServer</li>
-                            <li>Entity Framework Core.Tools</li>
+                            <li>
+                                Then we need to create the database path, so go to <strong> “appsetting.json”</strong>
+                                and
+                                write the code below
+                            </li>
 
-                        </ol>
-
-                        <li>
-                            Then we need to create the database path, so go to <strong> “appsetting.json”</strong> and
-                            write the code below
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"> <span style="color: #FF0000; background-color: #FFAAAA">“</span><span style="color: #007700">AllowedHost</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">:</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span><span style="color: #333333">*</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">,</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"> <span style="color: #FF0000; background-color: #FFAAAA">“</span><span style="color: #007700">AllowedHost</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">:</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span><span style="color: #333333">*</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">,</span>
 <span style="background-color: #fff0f0">&quot;ConnectionStrings&quot;</span><span style="color: #333333">:</span> {
     <span style="background-color: #fff0f0">&quot;DefaultConnection&quot;</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&quot;Server=.; Database=Database_Name; Trusted_Connection=True&quot;</span>
   }
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                Then create a folder name data and Add a class on that folder named as
+                                <strong> “ApplicationDbContext”.</strong>
+                            </li>
 
-                        <li>
-                            Then create a folder name data and Add a class on that folder named as
-                            <strong> “ApplicationDbContext”.</strong>
-                        </li>
+                            <li>
+                                Then do the class inherited by the “DbContext” class.
+                                Type <strong> “ctor”</strong> and double tab for auto create a constructor of the class
 
-                        <li>
-                            Then do the class inherited by the “DbContext” class.
-                            Type <strong> “ctor”</strong> and double tab for auto create a constructor of the class
+                            </li>
 
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">ApplicationDbContext</span>(DbContextOptions&lt;ApplicationDbContext&gt; options):<span style="color: #008800; font-weight: bold">base</span>(options)
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">ApplicationDbContext</span>(DbContextOptions&lt;ApplicationDbContext&gt; options):<span style="color: #008800; font-weight: bold">base</span>(options)
         {
 
         }
 
    <span style="color: #008800; font-weight: bold">public</span> DbSet&lt;Student&gt; students { <span style="color: #008800; font-weight: bold">get</span>; <span style="color: #008800; font-weight: bold">set</span>; }
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                Then go to <strong> “program.cs”</strong> file and write the code in <strong> “add
+                                    service
+                                    to the container”</strong> line
 
-                        <li>
-                            Then go to <strong> “program.cs”</strong> file and write the code in <strong> “add service
-                                to the container”</strong> line
+                            </li>
 
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #007700">builder</span><span style="color: #BB0066; font-weight: bold">.Services.AddControllersWithViews</span><span style="color: #333333">();</span>  <span style="color: #333333">//</span><span style="color: #007700">default</span> <span style="color: #007700">line</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #007700">builder</span><span style="color: #BB0066; font-weight: bold">.Services.AddControllersWithViews</span><span style="color: #333333">();</span>  <span style="color: #333333">//</span><span style="color: #007700">default</span> <span style="color: #007700">line</span>
 <span style="color: #007700">builder</span><span style="color: #BB0066; font-weight: bold">.Services.AddDbContext</span><span style="color: #333333">&lt;</span><span style="color: #007700">ApplicationDbContext</span><span style="color: #333333">&gt;(</span><span style="color: #007700">Options</span><span style="color: #333333">=&gt;</span> <span style="color: #007700">Options</span><span style="color: #BB0066; font-weight: bold">.UseSqlServer</span><span style="color: #333333">(</span><span style="color: #007700">builder</span><span style="color: #BB0066; font-weight: bold">.Configuration.GetConnectionString</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;DefaultConnection&quot;</span><span style="color: #333333">)));</span>
 </pre>
+                                </div>
+
+
                             </div>
 
+                            <li>Then we need to migrate for creating the migration and database.
 
-                        </div>
-
-                        <li>Then we need to migrate for creating the migration and database.
-
-                            So goto <strong> “tools” => “Nuget package manager” => “Package Manager console”</strong>
-                        </li>
-
-                        <li>
-                            Then write the code below in the console
-                        </li>
-
-                        <div class="code-block">
+                                So goto <strong> “tools” => “Nuget package manager” => “Package Manager
+                                    console”</strong>
+                            </li>
 
                             <li>
+                                Then write the code below in the console
+                            </li>
+
+                            <div class="code-block">
+
+                                <li>
+                                    <!-- HTML generated using hilite.me -->
+                                    <div
+                                        style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #009999">1.</span><span style="color: #0000aa">add</span>-migration migration-name
+                                    </pre>
+                                    </div>
+                                </li>
+
+                                <li>When the migration is done then -</li>
+
+                                <li>
+                                    <!-- HTML generated using hilite.me -->
+                                    <div
+                                        style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #009999">2.</span>update-database
+                                    </pre>
+                                    </div>
+                                </li>
+                            </div>
+
+                            <li>When we do update-database then the database is visible in our
+                                <strong>“msSqlServer”</strong>.
+                            </li>
+
+                            <li>
+                                Then we need to add a controller. So go to controller folder and add a controller with a
+                                proper name like <strong> “StudentController.cs”.</strong>
+                            </li>
+
+                            <li>
+                                Then inside that controller we need to add a view for the <strong> “Index”</strong>. So
+                                right click on the Index and add a empty view.
+                            </li>
+
+                            <li>
+                                Then we need to add a navigation button for redirect to the controller directly.
+                            </li>
+
+                            <li>
+                                So go to <strong> “Shared”</strong> folder and select the <strong>
+                                    “_Layout.cshtml”.</strong>
+                                In the navigation section we add a new nav item for our new
+                                controller <strong> (StudentController)</strong>
+                            </li>
+
+                            <div class="code-block">
                                 <!-- HTML generated using hilite.me -->
                                 <div
                                     style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                    <pre style="margin: 0; line-height: 125%"><span style="color: #009999">1.</span><span style="color: #0000aa">add</span>-migration migration-name
-                                    </pre>
-                                </div>
-                            </li>
-
-                            <li>When the migration is done then -</li>
-
-                            <li>
-                                <!-- HTML generated using hilite.me -->
-                                <div
-                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                    <pre style="margin: 0; line-height: 125%"><span style="color: #009999">2.</span>update-database
-                                    </pre>
-                                </div>
-                            </li>
-                        </div>
-
-                        <li>When we do update-database then the database is visible in our
-                            <strong>“msSqlServer”</strong>.
-                        </li>
-
-                        <li>
-                            Then we need to add a controller. So go to controller folder and add a controller with a
-                            proper name like <strong> “StudentController.cs”.</strong>
-                        </li>
-
-                        <li>
-                            Then inside that controller we need to add a view for the <strong> “Index”</strong>. So
-                            right click on the Index and add a empty view.
-                        </li>
-
-                        <li>
-                            Then we need to add a navigation button for redirect to the controller directly.
-                        </li>
-
-                        <li>
-                            So go to <strong> “Shared”</strong> folder and select the <strong>
-                                “_Layout.cshtml”.</strong>
-                            In the navigation section we add a new nav item for our new
-                            controller <strong> (StudentController)</strong>
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%">&lt;li class=<span style="color: #0000FF">&quot;nav-item&quot;</span>&gt;
+                                    <pre style="margin: 0; line-height: 125%">&lt;li class=<span style="color: #0000FF">&quot;nav-item&quot;</span>&gt;
 &lt;a class=<span style="color: #0000FF">&quot;nav-link text-dark&quot;</span> asp-area=<span style="color: #0000FF">&quot;&quot;</span> asp-controller=<span style="color: #0000FF">&quot;Student&quot;</span> asp-action=<span style="color: #0000FF">&quot;Index&quot;</span>&gt;Student
 &lt;/a&gt;
 &lt;/li&gt;
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                Then go to the controller <strong> (StudentController)</strong> and write the code below
+                                above the <strong> index ()</strong>
+                            </li>
 
-                        <li>
-                            Then go to the controller <strong> (StudentController)</strong> and write the code below
-                            above the <strong> index ()</strong>
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">private</span> <span style="color: #008800; font-weight: bold">readonly</span> ApplicationDbContext _db;
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">private</span> <span style="color: #008800; font-weight: bold">readonly</span> ApplicationDbContext _db;
 
         <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">StudentController</span>(ApplicationDbContext db)
         {
@@ -247,37 +253,38 @@
             <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">View</span>(objStudentList);
         }
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                In this code we create a constructor and pass the database their and create a <strong>
+                                    IActionResult</strong> to pass the object of <strong>StudentList.</strong>
+                            </li>
 
-                        <li>
-                            In this code we create a constructor and pass the database their and create a <strong>
-                                IActionResult</strong> to pass the object of <strong>StudentList.</strong>
-                        </li>
+                            <li>
+                                Then go to the view page of the <strong> StudentController</strong> and add the below
+                                code
+                                in the top of the all code.
+                            </li>
 
-                        <li>
-                            Then go to the view page of the <strong> StudentController</strong> and add the below code
-                            in the top of the all code.
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #FF0000; background-color: #FFAAAA">@</span><span style="color: #007020">model</span> IEnumerable&lt;Student&gt;
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #FF0000; background-color: #FFAAAA">@</span><span style="color: #007020">model</span> IEnumerable&lt;Student&gt;
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>Then create a table to display the data of the database.</li>
 
-                        <li>Then create a table to display the data of the database.</li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span><span style="color: #007700">table</span> <span style="color: #007700">class</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;table table-boarder table-striped&quot;</span> <span style="color: #007700">style</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;width:100%&quot;</span><span style="color: #333333">&gt;</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span><span style="color: #007700">table</span> <span style="color: #007700">class</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;table table-boarder table-striped&quot;</span> <span style="color: #007700">style</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;width:100%&quot;</span><span style="color: #333333">&gt;</span>
     <span style="color: #333333">&lt;</span><span style="color: #007700">thead</span><span style="color: #333333">&gt;</span>
     <span style="color: #333333">&lt;</span><span style="color: #007700">tr</span><span style="color: #333333">&gt;</span>
         <span style="color: #333333">&lt;</span><span style="color: #007700">th</span><span style="color: #333333">&gt;</span><span style="color: #007700">Student</span> <span style="color: #007700">ID</span><span style="color: #333333">&lt;/</span><span style="color: #007700">th</span><span style="color: #333333">&gt;</span>
@@ -304,75 +311,81 @@
 <span style="color: #333333">&lt;/</span><span style="color: #007700">tbody</span><span style="color: #333333">&gt;</span>
 <span style="color: #333333">&lt;/</span><span style="color: #007700">table</span><span style="color: #333333">&gt;</span>
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>In this code we declared a foreach loop which help us to repeat the loop and display all
+                                the
+                                database value in our webpage.
 
-                        <li>In this code we declared a foreach loop which help us to repeat the loop and display all the
-                            database value in our webpage.
+                                Then run the code for display the output.
+                            </li>
 
-                            Then run the code for display the output.
-                        </li>
+                            <br>
+                            <h3>Icon Adding with Bootstrap CDN</h3>
+                            <br>
 
-                        <br>
-                        <h3>Icon Adding with Bootstrap CDN</h3>
-                        <br>
+                            <li>
+                                Go to bootstrap and click on icon the click on install. Copy the CDN link and past it in
+                                the
+                                <strong> “_Layout.cshtml”</strong> page below the css link.
+                            </li>
+                            <li>
+                                It help to load the icon that we use in our project. Then run the project once more then
+                                we
+                                able to view a button and a heading.
+                            </li>
 
-                        <li>
-                            Go to bootstrap and click on icon the click on install. Copy the CDN link and past it in the
-                            <strong> “_Layout.cshtml”</strong> page below the css link.
-                        </li>
-                        <li>
-                            It help to load the icon that we use in our project. Then run the project once more then we
-                            able to view a button and a heading.
-                        </li>
+                            <br>
+                            <h2>1.Create()</h2>
 
-                        <br>
-                        <h2>1.Create()</h2>
+                            <li>
+                                But the button doesn’t work, because we dont have <strong> “Create”</strong> Method. So
+                                go
+                                to the
+                                <strong> “StudentController”</strong> and create a new method below <strong>
+                                    Index().</strong>
+                            </li>
 
-                        <li>
-                            But the button doesn’t work, because we dont have <strong> “Create”</strong> Method. So go
-                            to the
-                            <strong> “StudentController”</strong> and create a new method below <strong>
-                                Index().</strong>
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #333333">//</span><span style="color: #007700">CREATE</span><span style="color: #333333">/</span><span style="color: #007700">ADD</span> <span style="color: #007700">STUDENT</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #333333">//</span><span style="color: #007700">CREATE</span><span style="color: #333333">/</span><span style="color: #007700">ADD</span> <span style="color: #007700">STUDENT</span>
 <span style="color: #333333">//</span><span style="color: #007700">GET</span>
 <span style="color: #007700">Public</span> <span style="color: #007700">IActionResult</span> <span style="color: #007700">Create</span><span style="color: #333333">()</span>
 {
 	Return view();
 }
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                Then add a view for the <strong> Create()</strong>, so right click on the Create and
+                                select
+                                the <strong> Add view</strong>
+                                Option
+                            </li>
 
-                        <li>
-                            Then add a view for the <strong> Create()</strong>, so right click on the Create and select
-                            the <strong> Add view</strong>
-                            Option
-                        </li>
+                            <li>
+                                <strong>Add View => Razor view => Add</strong>
+                            </li>
 
-                        <li>
-                            <strong>Add View => Razor view => Add</strong>
-                        </li>
+                            <li>
+                                It open a view page named as <strong> “Create.cshtml”</strong>. Then remove all the code
+                                of
+                                the page and past
+                                the below code on that page.
+                            </li>
 
-                        <li>
-                            It open a view page named as <strong> “Create.cshtml”</strong>. Then remove all the code of
-                            the page and past
-                            the below code on that page.
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">@model</span> <span style="color: #007700">Student</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">@model</span> <span style="color: #007700">Student</span>
 
 <span style="color: #333333">&lt;</span><span style="color: #007700">form</span> <span style="color: #007700">method</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;post&quot;</span><span style="color: #333333">&gt;</span>
 <span style="color: #333333">&lt;</span><span style="color: #007700">div</span> <span style="color: #007700">class</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;border p-3 mt-4&quot;</span><span style="color: #333333">&gt;</span>
@@ -422,25 +435,26 @@
 <span style="color: #333333">&lt;/</span><span style="color: #007700">div</span><span style="color: #333333">&gt;</span>
 <span style="color: #333333">&lt;/</span><span style="color: #007700">form</span><span style="color: #333333">&gt;</span>
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                The above code help us to take input from the user. But we need to write the <strong>
+                                    “POST”</strong> method
+                                for take the input from the user and save that in the database. So follow the code
+                                below.
+                            </li>
 
-                        <li>
-                            The above code help us to take input from the user. But we need to write the <strong>
-                                “POST”</strong> method
-                            for take the input from the user and save that in the database. So follow the code below.
-                        </li>
+                            <li>
+                                Go to the <strong> “StudentController”</strong> and write the code below from Create().
+                            </li>
 
-                        <li>
-                            Go to the <strong> “StudentController”</strong> and write the code below from Create().
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #888888">//POST</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #888888">//POST</span>
 <span style="color: #0000CC">[HttpPost]</span>
 <span style="color: #0000CC">        [ValidateAntiForgeryToken]</span>
         <span style="color: #008800; font-weight: bold">public</span> IActionResult <span style="color: #0066BB; font-weight: bold">Create</span> (Student obj)
@@ -450,38 +464,41 @@
             <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">RedirectToAction</span>(<span style="background-color: #fff0f0">&quot;Index&quot;</span>);
         }
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>The above code take the input and store the data in the database.</li>
 
-                        <li>The above code take the input and store the data in the database.</li>
+                            <h3>VALIDATION</h3>
+                            <h4>a.Server Side Validation</h4>
 
-                        <h3>VALIDATION</h3>
-                        <h4>a.Server Side Validation</h4>
+                            <li>
+                                The project is run smoothly but when we only click on <strong> “Create”</strong> button
+                                it
+                                shows error.
+                                Because we don’t write the code for validation.
+                            </li>
 
-                        <li>
-                            The project is run smoothly but when we only click on <strong> “Create”</strong> button it
-                            shows error.
-                            Because we don’t write the code for validation.
-                        </li>
+                            <li>
+                                So we need to write the validation code on the <strong> POST</strong> method on the
+                                <strong>
+                                    StudentController.</strong>
+                            </li>
 
-                        <li>
-                            So we need to write the validation code on the <strong> POST</strong> method on the <strong>
-                                StudentController.</strong>
-                        </li>
+                            <li>
+                                The code of <strong> POST</strong> method is same just we need to add a <strong>
+                                    if</strong>
+                                condition that
+                                validate the
+                                condition. That is the <strong> validation code.</strong>
+                            </li>
 
-                        <li>
-                            The code of <strong> POST</strong> method is same just we need to add a <strong> if</strong>
-                            condition that
-                            validate the
-                            condition. That is the <strong> validation code.</strong>
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">if</span> (ModelState.IsValid)
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">if</span> (ModelState.IsValid)
             {
                 _db.students.Add(obj);
                 _db.SaveChanges();
@@ -489,89 +506,92 @@
             }
             <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">View</span>(obj);
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                The above code help use to match the condition, if anybody not match the condition then
+                                it
+                                display the proper error in the form.
+                            </li>
 
-                        <li>
-                            The above code help use to match the condition, if anybody not match the condition then it
-                            display the proper error in the form.
-                        </li>
+                            <li>
+                                But we didn’t declare the error part in our view page so need to add one line of code in
+                                every field below.
+                            </li>
 
-                        <li>
-                            But we didn’t declare the error part in our view page so need to add one line of code in
-                            every field below.
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span><span style="color: #007700">span</span> <span style="color: #007700">asp-validation-for</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;FirstName&quot;</span> <span style="color: #007700">class</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;text-danger&quot;</span><span style="color: #333333">&gt;&lt;/</span><span style="color: #007700">span</span><span style="color: #333333">&gt;</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span><span style="color: #007700">span</span> <span style="color: #007700">asp-validation-for</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;FirstName&quot;</span> <span style="color: #007700">class</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;text-danger&quot;</span><span style="color: #333333">&gt;&lt;/</span><span style="color: #007700">span</span><span style="color: #333333">&gt;</span>
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                We add the code below every <strong> text field</strong> and <strong>input box</strong>
+                                So
+                                that it display the error
+                                properly.
+                            </li>
 
-                        <li>
-                            We add the code below every <strong> text field</strong> and <strong>input box</strong> So
-                            that it display the error
-                            properly.
-                        </li>
+                            <li>
+                                If we want to display all the validation message at a time at the top then also we can
+                                do
+                                with a line of code.
+                                Just add the below code in the top of the columns and boom it work.
 
-                        <li>
-                            If we want to display all the validation message at a time at the top then also we can do
-                            with a line of code.
-                            Just add the below code in the top of the columns and boom it work.
+                            </li>
 
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span><span style="color: #007700">div</span> <span style="color: #007700">asp-validation-summary</span> <span style="color: #333333">=</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span><span style="color: #007700">All</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">&gt;&lt;/</span><span style="color: #007700">div</span><span style="color: #333333">&gt;</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span><span style="color: #007700">div</span> <span style="color: #007700">asp-validation-summary</span> <span style="color: #333333">=</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span><span style="color: #007700">All</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">&gt;&lt;/</span><span style="color: #007700">div</span><span style="color: #333333">&gt;</span>
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <br>
+                            <h4>b.Custom Validation</h4>
 
-                        <br>
-                        <h4>b.Custom Validation</h4>
+                            <li>
+                                We try to give a validation like the both field can’t be same. So it called custom
+                                validation.
+                            </li>
 
-                        <li>
-                            We try to give a validation like the both field can’t be same. So it called custom
-                            validation.
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #007700">If</span> <span style="color: #333333">(</span> <span style="color: #007700">obj</span><span style="color: #BB0066; font-weight: bold">.Name</span> <span style="color: #333333">==</span> <span style="color: #007700">obj</span><span style="color: #BB0066; font-weight: bold">.DisplayOrder.ToString</span><span style="color: #333333">())</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #007700">If</span> <span style="color: #333333">(</span> <span style="color: #007700">obj</span><span style="color: #BB0066; font-weight: bold">.Name</span> <span style="color: #333333">==</span> <span style="color: #007700">obj</span><span style="color: #BB0066; font-weight: bold">.DisplayOrder.ToString</span><span style="color: #333333">())</span>
 {
     Modelstate<span style="color: #333333">.</span>AddModelError ( <span style="color: #FF0000; background-color: #FFAAAA">“</span>name<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">,</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span>The Displayorder can<span style="color: #FF0000; background-color: #FFAAAA">’</span>t exactly match the name<span style="color: #FF0000; background-color: #FFAAAA">”</span>);
     }
     </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>Write the code just above of server validation code.</li>
 
-                        <li>Write the code just above of server validation code.</li>
+                            <br>
+                            <h4>c.Client Side Validation</h4>
 
-                        <br>
-                        <h4>c.Client Side Validation</h4>
+                            <li>
+                                If we want to use client side validation, then we need to add some code below the
+                                <strong> “Create.cshtml”</strong> file. <strong> (In all view)</strong>
+                            </li>
 
-                        <li>
-                            If we want to use client side validation, then we need to add some code below the
-                            <strong> “Create.cshtml”</strong> file. <strong> (In all view)</strong>
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #333333">@*</span><span style="color: #007700">Client</span> <span style="color: #007700">side</span> <span style="color: #007700">Validation</span> <span style="color: #333333">*@</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #333333">@*</span><span style="color: #007700">Client</span> <span style="color: #007700">side</span> <span style="color: #007700">Validation</span> <span style="color: #333333">*@</span>
 <span style="color: #008800; font-weight: bold">@section</span> <span style="color: #007700">Scripts</span>{
 
     <span style="color: #333333">@</span>{
@@ -580,29 +600,29 @@
     }
 }
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                Just add this code and boom our client side validation is working smoothly.
+                            </li>
 
-                        <li>
-                            Just add this code and boom our client side validation is working smoothly.
-                        </li>
+                            <br>
+                            <h2>2.Edit()</h2>
 
-                        <br>
-                        <h2>2.Edit()</h2>
+                            <li>
+                                For <strong> Edit</strong> we create <strong> Get</strong> and <strong> Post</strong>
+                                method, So go to the <strong> “StudentController”</strong>
+                                and write the below
+                                code for GET method.
+                            </li>
 
-                        <li>
-                            For <strong> Edit</strong> we create <strong> Get</strong> and <strong> Post</strong>
-                            method, So go to the <strong> “StudentController”</strong>
-                            and write the below
-                            code for GET method.
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #333333">//</span><span style="color: #007700">Edit</span><span style="color: #333333">/</span><span style="color: #007700">Update</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #333333">//</span><span style="color: #007700">Edit</span><span style="color: #333333">/</span><span style="color: #007700">Update</span>
         <span style="color: #333333">//</span><span style="color: #007700">Get</span>
         <span style="color: #007700">public</span> <span style="color: #007700">IActionResult</span> <span style="color: #007700">Edit</span><span style="color: #333333">(</span><span style="color: #007700">int</span><span style="color: #333333">?</span> <span style="color: #007700">id</span><span style="color: #333333">)</span>
         {
@@ -621,51 +641,56 @@
             <span style="color: #007700">return</span> <span style="color: #007700">View</span><span style="color: #333333">(</span><span style="color: #007700">studentFromDb</span><span style="color: #333333">);</span>
         <span style="color: #FF0000; background-color: #FFAAAA">}</span>
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                The <strong> POST</strong> method is same as the <strong> Create Post</strong> method.
+                                So
+                                copy and paste that below the <strong> Get</strong> method.
+                            </li>
 
-                        <li>
-                            The <strong> POST</strong> method is same as the <strong> Create Post</strong> method. So
-                            copy and paste that below the <strong> Get</strong> method.
-                        </li>
+                            <li>
+                                Then we need a view for the <strong> Edit()</strong> method. SO right click on the Edit
+                                and
+                                select Add a View.
+                            </li>
 
-                        <li>
-                            Then we need a view for the <strong> Edit()</strong> method. SO right click on the Edit and
-                            select Add a View.
-                        </li>
+                            <li>
+                                In the view page of <strong> Edit</strong> is same as like <strong> Create</strong>. So
+                                copy
+                                past the code from the <strong> Create</strong> and
+                                past in the <strong> Edit</strong> view page.
+                            </li>
 
-                        <li>
-                            In the view page of <strong> Edit</strong> is same as like <strong> Create</strong>. So copy
-                            past the code from the <strong> Create</strong> and
-                            past in the <strong> Edit</strong> view page.
-                        </li>
+                            <li>
+                                Just need to change the code from 2 place like the <strong> “Create”</strong> need to
+                                change
+                                to <strong> “Update”</strong> and add some below code in <strong>form </strong> tag
+                            </li>
 
-                        <li>
-                            Just need to change the code from 2 place like the <strong> “Create”</strong> need to change
-                            to <strong> “Update”</strong> and add some below code in <strong>form </strong> tag
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span><span style="color: #007700">form</span> <span style="color: #007700">method</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;post&quot;</span> <span style="color: #007700">asp-action</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Edit&quot;</span><span style="color: #333333">&gt;</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span><span style="color: #007700">form</span> <span style="color: #007700">method</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;post&quot;</span> <span style="color: #007700">asp-action</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Edit&quot;</span><span style="color: #333333">&gt;</span>
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                Then we need to place the <strong> Edit</strong> button in the index page. So go to
+                                index
+                                page and add some code in <strong> thead</strong> tag.
+                            </li>
 
-                        <li>
-                            Then we need to place the <strong> Edit</strong> button in the index page. So go to index
-                            page and add some code in <strong> thead</strong> tag.
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span><span style="color: #007700">div</span> <span style="color: #007700">class</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;w-75 btn-group&quot;</span> <span style="color: #007700">role</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;group&quot;</span><span style="color: #333333">&gt;</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span><span style="color: #007700">div</span> <span style="color: #007700">class</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;w-75 btn-group&quot;</span> <span style="color: #007700">role</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;group&quot;</span><span style="color: #333333">&gt;</span>
 <span style="color: #333333">@*</span><span style="color: #007700">Edit</span> <span style="color: #007700">Button</span><span style="color: #333333">*@</span>
 <span style="color: #333333">&lt;</span><span style="color: #007700">a</span> <span style="color: #007700">asp-controller</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Student&quot;</span> <span style="color: #007700">asp-action</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Edit&quot;</span> <span style="color: #007700">asp-route-id</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;@obj.Stud_Id&quot;</span> <span style="color: #007700">class</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;btn btn-primary mx-2&quot;</span><span style="color: #333333">&gt;</span>
 <span style="color: #333333">&lt;</span><span style="color: #007700">i</span> <span style="color: #007700">class</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;bi bi-pencil-square&quot;</span><span style="color: #333333">&gt;&lt;/</span><span style="color: #007700">i</span><span style="color: #333333">&gt;</span>
@@ -673,58 +698,61 @@
 <span style="color: #333333">&lt;/</span><span style="color: #007700">a</span><span style="color: #333333">&gt;</span>
 <span style="color: #333333">&lt;/</span><span style="color: #007700">div</span><span style="color: #333333">&gt;</span>
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                The above code create a <strong> Edit</strong> button on the <strong> index</strong>
+                                page.
+                                Then all Operation Perform.
+                            </li>
 
-                        <li>
-                            The above code create a <strong> Edit</strong> button on the <strong> index</strong> page.
-                            Then all Operation Perform.
-                        </li>
+                            <br>
+                            <h2>3.Delete()</h2>
 
-                        <br>
-                        <h2>3.Delete()</h2>
+                            <li>
+                                We need to add a button for <strong> Deleting</strong> so go to <strong> index</strong>
+                                page
+                                and add the button below the <strong> Edit</strong> button.
+                            </li>
 
-                        <li>
-                            We need to add a button for <strong> Deleting</strong> so go to <strong> index</strong> page
-                            and add the button below the <strong> Edit</strong> button.
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #333333">@*</span><span style="color: #007700">Delete</span> <span style="color: #007700">Button</span><span style="color: #333333">*@</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #333333">@*</span><span style="color: #007700">Delete</span> <span style="color: #007700">Button</span><span style="color: #333333">*@</span>
 <span style="color: #333333">&lt;</span><span style="color: #007700">a</span> <span style="color: #007700">asp-controller</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Student&quot;</span> <span style="color: #007700">asp-action</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Delete&quot;</span> <span style="color: #007700">asp-route-id</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;@obj.StudentID&quot;</span> <span style="color: #007700">class</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;btn btn-primary mx-2&quot;</span><span style="color: #333333">&gt;</span>
 <span style="color: #333333">&lt;</span><span style="color: #007700">i</span> <span style="color: #007700">class</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;bi bi-trash-fill&quot;</span><span style="color: #333333">&gt;&lt;/</span><span style="color: #007700">i</span><span style="color: #333333">&gt;</span>
 <span style="color: #007700">Delete</span>
 <span style="color: #333333">&lt;/</span><span style="color: #007700">a</span><span style="color: #333333">&gt;</span>
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                The above code help to display the <strong> Delete</strong> button in the <strong>
+                                    Index</strong> page.
 
-                        <li>
-                            The above code help to display the <strong> Delete</strong> button in the <strong>
-                                Index</strong> page.
+                                Then go to <strong> StudentController</strong> and copy past the <strong> GET
+                                    POST</strong>
+                                method of <strong> “Edit”.</strong>
 
-                            Then go to <strong> StudentController</strong> and copy past the <strong> GET POST</strong>
-                            method of <strong> “Edit”.</strong>
+                            </li>
 
-                        </li>
+                            <li>
+                                The <strong> Get</strong> method doesn’t need any change. It as same as <strong>
+                                    Edit</strong>. Just Change <strong> Edit</strong> to <strong> Delete</strong> in
+                                IActionResult. But <strong> POST</strong> method need to change write the below code in
+                                <strong> POST</strong> method
+                            </li>
 
-                        <li>
-                            The <strong> Get</strong> method doesn’t need any change. It as same as <strong>
-                                Edit</strong>. Just Change <strong> Edit</strong> to <strong> Delete</strong> in
-                            IActionResult. But <strong> POST</strong> method need to change write the below code in
-                            <strong> POST</strong> method
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #333333">//</span><span style="color: #007700">Post</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #333333">//</span><span style="color: #007700">Post</span>
         <span style="color: #333333">[</span><span style="color: #007700">HttpPost</span><span style="color: #333333">,</span> <span style="color: #007700">ActionName</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Delete&quot;</span><span style="color: #333333">)]</span>
         <span style="color: #333333">[</span><span style="color: #007700">ValidateAntiForgeryToken</span><span style="color: #333333">]</span>
         <span style="color: #007700">public</span> <span style="color: #007700">IActionResult</span> <span style="color: #007700">DeletePost</span><span style="color: #333333">(</span><span style="color: #007700">int</span><span style="color: #333333">?</span> <span style="color: #007700">id</span><span style="color: #333333">)</span>
@@ -742,20 +770,20 @@
 
         <span style="color: #FF0000; background-color: #FFAAAA">}</span>
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <li>
+                                Then we need a view for <strong> Delete</strong>, So right click on the <strong>
+                                    Delete</strong> section and add a view.. Write the code in Delete Page.
+                            </li>
 
-                        <li>
-                            Then we need a view for <strong> Delete</strong>, So right click on the <strong>
-                                Delete</strong> section and add a view.. Write the code in Delete Page.
-                        </li>
-
-                        <div class="code-block">
-                            <!-- HTML generated using hilite.me -->
-                            <div
-                                style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-                                <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">@model</span> <span style="color: #007700">Student</span>
+                            <div class="code-block">
+                                <!-- HTML generated using hilite.me -->
+                                <div
+                                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                    <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">@model</span> <span style="color: #007700">Student</span>
 
 <span style="color: #333333">&lt;</span><span style="color: #007700">form</span> <span style="color: #007700">method</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;post&quot;</span> <span style="color: #007700">asp-action</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Delete&quot;</span><span style="color: #333333">&gt;</span>
 <span style="color: #333333">&lt;</span><span style="color: #007700">input</span> <span style="color: #007700">asp-for</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;StudentID&quot;</span> <span style="color: #007700">hidden</span> <span style="color: #333333">/&gt;</span>
@@ -827,22 +855,25 @@
 }
 }
 </pre>
+                                </div>
+
                             </div>
 
-                        </div>
-
-                        <li>
-                            The view display a separate page that contain a <strong> Delete</strong> button. When we
-                            click on <strong> Delete</strong> button it work smoothly.
-                        </li>
+                            <li>
+                                The view display a separate page that contain a <strong> Delete</strong> button. When we
+                                click on <strong> Delete</strong> button it work smoothly.
+                            </li>
 
 
 
                     </ul>
 
                     <!-- readmore-button  -->
-                    <button onclick="myFunction()" id="myBtn">Read more</button>
-
+                    <div class="r-btn">
+                        <button onclick="myFunction()" id="myBtn">
+                              Read More 
+                        </button>
+                    </div>
                 </div>
                 <!-- <div class="card">
                     <h2>TITLE HEADING</h2>
@@ -868,13 +899,33 @@
                 </div>
                 <div class="card">
                     <h3>Popular Post</h3>
-                    <div class="fakeimg">Image</div><br>
-                    <div class="fakeimg">Image</div><br>
-                    <div class="fakeimg">Image</div>
+                    <div class="fakeimg">
+                        <a href="http://127.0.0.1:5501/Blog/CRUD/Crud.html">
+                            <img src="https://www.qsstechnosoft.com/wp-content/uploads/2019/04/Crud-using-Asp.net-core-1-1024x512.jpg"
+                                class="img-fluid mx-auto d-block" alt="">
+                        </a>
+                    </div><br>
+                    <!-- <div class="fakeimg">Image</div><br>
+                    <div class="fakeimg">Image</div> -->
                 </div>
                 <div class="card">
                     <h3>Follow Me</h3>
-                    <p>Some text..</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com/chandan.meher.948cm/" target="_blank">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://wa.me/6370137741" target="_blank">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mr_antique_143/" target="_blank">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://in.linkedin.com/in/chandan-meher-b81ab5135?trk=people-guest_people_search-card"
+                            target="_blank">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
