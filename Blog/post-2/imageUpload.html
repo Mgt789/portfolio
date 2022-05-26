@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <!-- style  -->
+    <link rel="stylesheet" href="/Blog/style/style.css">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1216/1216708.png?w=740">
+
+
+    <title>Blog page</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="header">
+            <h1>BLOG</h1>
+        </div>
+
+        <div class="row">
+            <!-- leftcolumn -->
+            <div class="leftcolumn">
+                
+
+                <!-- 2nd card -->
+                <div class="card">
+                    <h2>File Upload, Download and Display in MVC Core</h2>
+                    <h5>Date: May 26, 2022</h5>
+                    <div class="" style="height:auto;">
+                        <img src="https://img.freepik.com/free-vector/image-upload-illustration-concept_114360-776.jpg?t=st=1653556389~exp=1653556989~hmac=d14f59aeff4ddd185510dec0f49a59d0be985ee73dc614a71ac731d1ffd6b752&w=740"
+                            class="img-fluid mx-auto d-block" alt="">
+                    </div>
+                    <ul>
+                        <li>Create a MVC core application save give a proper path to store the project.</li>
+
+                        <li>Open the project in visual studio and go to the solution explorer.</li>
+
+                        <li>Right click on Controller and add a controller with proper name like
+                            <strong>"GalleryController"</strong>.
+                        </li>
+
+                        <li> Then we need to add a navigation for the GalleryController.</li>
+
+                        <li> Then we need to add a navigation for the GalleryController.</li>
+
+                        <!-- breakpoin -->
+                        <span id="dots">
+                           <strong> ...</strong></span><span id="more">
+                            <!-- breakpoin-end -->
+
+
+                        <div class="code-block">
+                            <!-- HTML generated using hilite.me -->
+                            <div
+                                style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span><span style="color: #008000; font-weight: bold">li</span> <span style="color: #008000; font-weight: bold">class</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;nav-item&quot;</span><span style="color: #666666">&gt;</span>
+    <span style="color: #666666">&lt;</span><span style="color: #008000; font-weight: bold">a</span> <span style="color: #008000; font-weight: bold">class</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;nav-link text-dark&quot;</span> <span style="color: #008000; font-weight: bold">asp-area</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;&quot;</span> <span style="color: #008000; font-weight: bold">asp-controller</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Gallery&quot;</span> <span style="color: #008000; font-weight: bold">asp-action</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Index&quot;</span><span style="color: #666666">&gt;</span><span style="color: #008000; font-weight: bold">Gallery</span><span style="color: #666666">&lt;/</span><span style="color: #008000; font-weight: bold">a</span><span style="color: #666666">&gt;</span>
+    <span style="color: #666666">&lt;/</span><span style="color: #008000; font-weight: bold">li</span><span style="color: #666666">&gt;</span>
+    </pre>
+                            </div>
+
+                        </div>
+
+                        <li>We save all the file in wwwroots folders. So add a website directory in the controller.</li>
+
+                        <div class="code-block">
+                            <!-- HTML generated using hilite.me -->
+                            <div
+                                style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #666666">//</span><span style="color: #008000; font-weight: bold">path</span> <span style="color: #008000; font-weight: bold">declare</span> 
+<span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">readonly</span> <span style="color: #008000; font-weight: bold">string</span> <span style="color: #008000; font-weight: bold">wwwrootDirectory</span> <span style="color: #666666">=</span>
+<span style="color: #008000; font-weight: bold">Path</span><span style="color: #0000FF; font-weight: bold">.Combine</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">Directory</span><span style="color: #0000FF; font-weight: bold">.GetCurrentDirectory</span><span style="color: #666666">(),</span> <span style="color: #BA2121">&quot;wwwroot&quot;</span><span style="color: #666666">);</span>
+</pre>
+                            </div>
+
+                        </div>
+
+                        <li>Create a POST method for action perform over the view</li>
+
+                        <div class="code-block">
+                            <!-- HTML generated using hilite.me -->
+                            <div
+                                style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #7D9029">[HttpPost]</span> <span style="color: #408080; font-style: italic">/*upload image from here*/</span>
+        <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">async</span> Task&lt;IActionResult&gt; Index(IFormFile myFile)
+        {
+            <span style="color: #008000; font-weight: bold">if</span> (myFile != <span style="color: #008000; font-weight: bold">null</span>)
+            {
+                <span style="color: #408080; font-style: italic">//path creatation</span>
+                <span style="color: #B00040">var</span> path = Path.Combine(
+                    wwwrootDirectory,
+                    DateTime.Now.Ticks.ToString() + Path.GetExtension(myFile.FileName));
+
+                <span style="color: #408080; font-style: italic">//save the file</span>
+                <span style="color: #008000; font-weight: bold">using</span> (<span style="color: #B00040">var</span> stream = <span style="color: #008000; font-weight: bold">new</span> FileStream(path, FileMode.Create))
+                {
+                    <span style="color: #008000; font-weight: bold">await</span> myFile.CopyToAsync(stream);
+                }
+                <span style="color: #008000; font-weight: bold">return</span> <span style="color: #0000FF">RedirectToAction</span>(<span style="color: #BA2121">&quot;Index&quot;</span>);
+            }
+            <span style="color: #008000; font-weight: bold">return</span> <span style="color: #0000FF">View</span>();
+        }
+</pre>
+                            </div>
+
+                        </div>
+
+                        <li>Then add a view for the Index method. Right click on the index and select Add view.</li>
+
+                        <br>
+                        <h2>File Upload</h2>
+
+                        <li>Then write the code for uploading the file in the server. So Create a container and write
+                            the below code on that.</li>
+
+                        <div class="code-block">
+                            <!-- HTML generated using hilite.me -->
+                            <div
+                                style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">@using</span> <span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">Html</span><span style="color: #0000FF; font-weight: bold">.BeginForm</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Index&quot;</span><span style="color: #666666">,</span> <span style="color: #BA2121">&quot;Gallery&quot;</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">FormMethod</span><span style="color: #0000FF; font-weight: bold">.Post</span><span style="color: #666666">,</span> <span style="color: #008000; font-weight: bold">new</span> { <span style="color: #008000; font-weight: bold">enctype</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;multipart/form-data&quot;</span> }<span style="color: #666666">))</span>
+    {
+        <span style="color: #666666">&lt;</span>div class<span style="color: #666666">=</span><span style="color: #BA2121">&quot;row&quot;</span> style<span style="color: #666666">=</span><span style="color: #BA2121">&quot;align-items:center&quot;</span><span style="color: #666666">&gt;</span>
+            <span style="color: #666666">&lt;</span>div class<span style="color: #666666">=</span><span style="color: #BA2121">&quot;form-group col-md-6&quot;</span><span style="color: #666666">&gt;</span>
+                <span style="color: #666666">&lt;</span>input type<span style="color: #666666">=</span><span style="color: #BA2121">&quot;file&quot;</span> class<span style="color: #666666">=</span><span style="color: #BA2121">&quot;form-control&quot;</span> name<span style="color: #666666">=</span><span style="color: #BA2121">&quot;myFile&quot;</span> <span style="color: #666666">/&gt;</span>
+            <span style="color: #666666">&lt;/</span>div<span style="color: #666666">&gt;</span>
+
+            <span style="color: #666666">&lt;</span>div class<span style="color: #666666">=</span><span style="color: #BA2121">&quot;form-group col-md-6&quot;</span><span style="color: #666666">&gt;</span>
+                <span style="color: #666666">&lt;</span>input type<span style="color: #666666">=</span><span style="color: #BA2121">&quot;submit&quot;</span> name<span style="color: #666666">=</span><span style="color: #BA2121">&quot;filesubmit&quot;</span> value<span style="color: #666666">=</span><span style="color: #BA2121">&quot;Upload&quot;</span> <span style="color: #666666">/&gt;</span>
+            <span style="color: #666666">&lt;/</span>div<span style="color: #666666">&gt;</span>
+        <span style="color: #666666">&lt;/</span>div<span style="color: #666666">&gt;</span>
+    }
+    <span style="color: #666666">&lt;</span><span style="color: #008000; font-weight: bold">br</span> <span style="color: #666666">/&gt;</span>
+</pre>
+                            </div>
+
+                        </div>
+
+                        <h2>Display Image</h2>
+
+                        <li>Then we write code for display the uploaded file.The code write in the index method .</li>
+
+                        <div class="code-block">
+                            <!-- HTML generated using hilite.me -->
+                            <div
+                                style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//Display the file</span>
+        <span style="color: #008000; font-weight: bold">public</span> IActionResult <span style="color: #0000FF">Index</span>()
+        {
+            <span style="color: #408080; font-style: italic">//only png file upload</span>
+            List&lt;<span style="color: #B00040">string?</span>&gt; images = Directory.GetFiles(wwwrootDirectory, <span style="color: #BA2121">&quot;*.png&quot;</span>)
+                .Select(Path.GetFileName)
+                .ToList();
+
+            <span style="color: #008000; font-weight: bold">return</span> <span style="color: #0000FF">View</span>(images);
+        }
+</pre>
+                            </div>
+
+                        </div>
+
+                        <li>Then we need to write some code in the view.</li>
+
+                        <li>First add a model top of the container the write the below code under the container.</li>
+
+                        <div class="code-block">
+                            <!-- HTML generated using hilite.me -->
+                            <div
+                                style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #AA22FF; font-weight: bold">@model</span> <span style="color: #008000; font-weight: bold">List</span><span style="color: #666666">&lt;</span><span style="color: #008000; font-weight: bold">string</span><span style="color: #666666">&gt;</span> <span style="color: #666666">//</span><span style="color: #008000; font-weight: bold">add</span> <span style="color: #008000; font-weight: bold">top</span> <span style="color: #008000; font-weight: bold">of</span> <span style="color: #008000; font-weight: bold">the</span> <span style="color: #008000; font-weight: bold">container</span>
+
+<span style="color: #666666">//</span><span style="color: #008000; font-weight: bold">Add</span> <span style="color: #008000; font-weight: bold">below</span> <span style="color: #008000; font-weight: bold">the</span> <span style="color: #008000; font-weight: bold">previous</span> <span style="color: #008000; font-weight: bold">code</span>
+
+<span style="color: #666666">&lt;</span><span style="color: #008000; font-weight: bold">div</span> <span style="color: #008000; font-weight: bold">class</span><span style="color: #666666">=</span><span style="color: #BB4444">&quot;row&quot;</span><span style="color: #666666">&gt;</span>
+        <span style="color: #AA22FF; font-weight: bold">@foreach</span> <span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">var</span> <span style="color: #008000; font-weight: bold">imagePath</span> <span style="color: #008000; font-weight: bold">in</span> <span style="color: #008000; font-weight: bold">Model</span><span style="color: #666666">)</span>
+        {
+            <span style="color: #666666">&lt;</span><span style="color: #008000; font-weight: bold">div</span> <span style="color: #008000; font-weight: bold">class</span><span style="color: #666666">=</span><span style="color: #BB4444">&quot;col-md-3&quot;</span><span style="color: #666666">&gt;</span>
+                <span style="color: #666666">&lt;</span><span style="color: #008000; font-weight: bold">div</span> <span style="color: #008000; font-weight: bold">class</span><span style="color: #666666">=</span><span style="color: #BB4444">&quot;alert alert-success&quot;</span> <span style="color: #008000; font-weight: bold">role</span><span style="color: #666666">=</span><span style="color: #BB4444">&quot;alert&quot;</span><span style="color: #666666">&gt;</span>
+                    <span style="color: #666666">&lt;</span><span style="color: #008000; font-weight: bold">a</span> <span style="color: #008000; font-weight: bold">href</span><span style="color: #666666">=</span><span style="color: #BB4444">&quot;/Gallery/DownloadFile/?filePath=@imagePath&quot;</span><span style="color: #666666">&gt;</span>
+                        <span style="color: #666666">&lt;</span><span style="color: #008000; font-weight: bold">img</span> <span style="color: #008000; font-weight: bold">src</span><span style="color: #666666">=</span><span style="color: #BB4444">&quot;~/@imagePath&quot;</span> <span style="color: #008000; font-weight: bold">alt</span><span style="color: #666666">=</span><span style="color: #BB4444">&quot;Alternate Text&quot;</span> <span style="color: #008000; font-weight: bold">class</span><span style="color: #666666">=</span><span style="color: #BB4444">&quot;img-fluid mx-auto d-block&quot;</span> <span style="color: #666666">/&gt;</span>
+                    <span style="color: #666666">&lt;/</span><span style="color: #008000; font-weight: bold">a</span><span style="color: #666666">&gt;</span>
+                <span style="color: #666666">&lt;/</span><span style="color: #008000; font-weight: bold">div</span><span style="color: #666666">&gt;</span>
+            <span style="color: #666666">&lt;/</span><span style="color: #008000; font-weight: bold">div</span><span style="color: #666666">&gt;</span>
+        }
+    <span style="color: #666666">&lt;/</span><span style="color: #008000; font-weight: bold">div</span><span style="color: #666666">&gt;</span>
+</pre>
+                            </div>
+
+                        </div>
+
+                        <h2>Download Image</h2>
+
+                        <li>So we need a action method for downloading the image</li>
+
+                        <li>So go to the controller and add the code below the POST method</li>
+
+                        <div class="code-block">
+                            <!-- HTML generated using hilite.me -->
+                            <div
+                                style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//download code/Download Action method</span>
+        <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">async</span> Task&lt;IActionResult&gt; DownloadFile(<span style="color: #B00040">string</span> filePath)
+        {
+            <span style="color: #B00040">var</span> path = Path.Combine(
+                Directory.GetCurrentDirectory(),
+                <span style="color: #BA2121">&quot;wwwroot&quot;</span>,filePath);
+
+            <span style="color: #B00040">var</span> memory = <span style="color: #008000; font-weight: bold">new</span> MemoryStream();
+            <span style="color: #008000; font-weight: bold">using</span> (<span style="color: #B00040">var</span> stream = <span style="color: #008000; font-weight: bold">new</span> FileStream(path, FileMode.Open))
+            {
+                <span style="color: #008000; font-weight: bold">await</span> stream.CopyToAsync(memory);
+            }
+            memory.Position = <span style="color: #666666">0</span>;
+            <span style="color: #B00040">var</span> contentType = <span style="color: #BA2121">&quot;APPLICATION/octet-stream&quot;</span>;
+            <span style="color: #B00040">var</span> fileName = Path.GetFileName(path);
+
+            <span style="color: #008000; font-weight: bold">return</span> <span style="color: #0000FF">File</span>(memory,contentType,fileName);
+        }
+</pre>
+                            </div>
+
+                        </div>
+
+                        <li>And boom our image is download easily.</li>
+
+
+                        </span>
+                    </ul>
+
+                    <!-- readmore-button  -->
+                    <div class="r-btn">
+                        <button onclick="myFunction()" id="readBtn">
+                            Read More
+                        </button>
+                    </div>
+                    <!-- readmore-button-end  -->
+                </div>
+                <!-- 2nd card-end -->
+
+                
+
+            </div>
+            <!-- leftcolumn-end -->
+
+            <!-- rightcolumn -->
+            <div class="rightcolumn">
+                <div class="card">
+                    <h2>About Me</h2>
+                    <div class="about-me" style="height:auto;">
+                        <img src="https://avatars.githubusercontent.com/u/97939228?v=4"
+                            class="img-fluid mx-auto d-block" alt="">
+                    </div>
+                    <p>I am chandan Meher. I am a Junior FullStack Developer. I loved to write code.</p>
+                </div>
+                <div class="card">
+                    <h3>Popular Post</h3>
+                    <div class="fakeimg">
+                        <a href="./imageUpload.html">
+                            <img src="https://img.freepik.com/free-vector/image-upload-illustration-concept_114360-776.jpg?t=st=1653556389~exp=1653556989~hmac=d14f59aeff4ddd185510dec0f49a59d0be985ee73dc614a71ac731d1ffd6b752&w=740"
+                                class="img-fluid mx-auto d-block" alt="">
+                        </a>
+                    </div><br>
+                    <!-- <div class="fakeimg">Image</div><br>
+                    <div class="fakeimg">Image</div> -->
+                </div>
+                <div class="card">
+                    <h3>Follow Me</h3>
+                    <div class="social">
+                        <a href="https://www.facebook.com/chandan.meher.948cm/" target="_blank">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://wa.me/6370137741" target="_blank">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mr_antique_143/" target="_blank">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://in.linkedin.com/in/chandan-meher-b81ab5135" target="_blank">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Mgt789" target="_blank">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- scroll down button -->
+        <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">
+            <i class="bi bi-arrow-up-circle"></i>
+            </button> -->
+        <button onclick="topFunction()" id="myBtn" title="Go to top">
+            <i class="bi bi-arrow-up-circle"></i>
+        </button>
+
+
+
+        <!-- scroll down button-end -->
+
+        <div class="footer">
+            copyright @copy by <span>mgt</span>. All Right Reserved.
+        </div>
+        <!-- rightcolumn-end -->
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+            </script>
+    </div>
+
+
+    <!-- readmore-btn  -->
+    <script src="/Blog/style/readme_button.js"></script>
+    <!-- readmore-btn-end -->
+
+
+    <!-- top-down button  -->
+    <script src="/Blog/style/top-down-button.js"></script>
+    <!-- top-down button  -->
+</body>
+
+</html>

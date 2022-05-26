@@ -1,0 +1,58 @@
+@media (max-width: 1280px){}
+
+@media (max-width: 1199px){}
+
+@media (max-width: 991px){
+    header {
+        height: 50vh;
+    }
+
+    .menu {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .list {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .navbar label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    #toggler:checked~.menu {
+        max-height: 100%;
+    }
+
+}
+
+
+@media (max-width: 767px){
+    #banner{
+        margin: 0;
+    }
+    .hero-test h1{
+        font-size: 2.5em;
+    }
+    .hero-text-center a {
+        font-weight: 500;
+        padding: 0.5em 1em;
+    }
+}
+
+@media (max-width: 575px){
+     #banner{
+        margin: 0;
+    }
+    .hero-text h1{
+        font-size: 2.5em ;
+    }
+    .hero-text-center a {
+        font-weight: 500;
+        padding: 0.5em 1em;
+    }
+}

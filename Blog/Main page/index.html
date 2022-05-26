@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <!-- style  -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./respo.css">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1216/1216708.png?w=740">
+
+    <!-- Importing the hamburger menu icon from remix icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <title>Blog page</title>
+</head>
+
+<body>
+
+    <div class="container-fuid">
+
+        <!-- navbar -->
+        <!-- <div class="container"> -->
+        <nav class="navbar">
+            <span href="#" class="logo">
+                Blooger
+            </span>
+            <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
+            <input type="checkbox" id="toggler">
+            <label for="toggler"><i class="ri-menu-line"></i></label>
+            <div class="menu ms-auto">
+                <ul class="list">
+                    <li><a href="#banner">Home</a></li>
+                    <li><a href="#cards">Cards</a></li>
+                    <li><a href="#post">Category</a></li>
+                    <li><a href="#post">Pages</a></li>
+                    <li><a href="#footer">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="menu icon ms-auto">
+                <ul class="list">
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-linkedin"></i>
+                    <i class="bi bi-whatsapp"></i>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!-- navbar-end -->
+
+        <!-- banner -->
+        <!-- <div class="container hero"> -->
+        <section id="banner">
+            <div class="hero_container">
+
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-sm-12 col-md-6 col-12 hero-text-area">
+                        <div class="hero_content hero-text-area">
+                            <div class="hero-text">
+                                <h1>Wellcome <br>
+                                    to my <br>
+                                    BLOG
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-6 col-sm-12 col-md-6 col-12 ">
+                        <div class="hero_content">
+                            <div class="hero_bg_image">
+                                <img src="/Blog/watch-video.svg" class="img-fluid mx-auto d-block" alt="">
+                                <div class="hero-text-center">
+                                    <a href="#body" class="btn">Get Start</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- banner-end -->
+
+    <!-- body  -->
+    <section id="body">
+        <div class="header">
+            <h1>Blog</h1>
+        </div>
+
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <h2>CRUD Operation With MVC Core</h2>
+                    <h5>Date: May 20, 2022</h5>
+                    <div class="fakeimg" style="height:auto;">
+                        <img src="https://www.qsstechnosoft.com/wp-content/uploads/2019/04/Crud-using-Asp.net-core-1-1024x512.jpg"
+                            class="img-fluid mx-auto d-block" alt="">
+                    </div>
+                </div>
+                <br>
+                <a href="/Blog/post-1/Crud.html" class="btn btn-primary">Read More</a>
+                <div class="card">
+                    <h2>File Upload, Download and Display in MVC Core</h2>
+                    <h5>Date: May 26, 2022</h5>
+                    <div class="fakeimg" style="height:auto;">
+                        <img src="https://img.freepik.com/free-vector/image-upload-illustration-concept_114360-776.jpg?t=st=1653556389~exp=1653556989~hmac=d14f59aeff4ddd185510dec0f49a59d0be985ee73dc614a71ac731d1ffd6b752&w=740"
+                            class="img-fluid d-block mx-auto" alt="">
+                    </div>
+                </div>
+                <br>
+                <a href="/Blog/post-2/imageUpload.html" class="btn btn-primary">Read More</a>
+
+            </div>
+            <div class="rightcolumn">
+                <div class="card">
+                    <h2>My Github Account</h2>
+                    <div class="git" style="height:auto;">
+                        <a href="https://github.com/Mgt789" target="_blank">
+                            <img src="./git.png" class="img-fluid mx-auto d-block" alt="">
+                        </a>
+                    </div>
+                    <a href="https://github.com/Mgt789" target="_blank">CLICK HERE</a>
+                    <span>Click the image or link to go to my github account</span>
+                </div>
+                <div class="card">
+                    <h3>Popular Post Code</h3>
+                    <div class="tag">
+                        <a href="#">1. CRUD Operation With MVC Core</a>
+                    </div><br>
+                    <div class="tag">
+                        <a href="#">2. File Upload, Download and Display in MVC Core</a>
+                    </div><br>
+                    <!-- <div class="fakeimg">Image</div> -->
+                </div>
+                <div class="card">
+                    <h3>Follow Me</h3>
+                    <div class="social">
+                        <a href="https://www.facebook.com/chandan.meher.948cm/" target="_blank">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://wa.me/6370137741" target="_blank">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mr_antique_143/" target="_blank">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://in.linkedin.com/in/chandan-meher-b81ab5135" target="_blank">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Mgt789" target="_blank">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        copyright @copy by <span>mgt</span>. All Right Reserved.
+    </div>
+
+    <!-- body -end -->
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>

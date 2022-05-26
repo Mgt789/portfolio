@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Anton&family=Lexend:wght@300;700&family=Livvic:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+
+*,
+.row,
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+h1{
+    font-family: 'Playball', cursive;
+    color: #1E1F44 !important;
+    font-weight: bold;
+}
+
+/* navbar  */
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    /* color: black;
+    background-color: rebeccapurple ; */
+    padding-block: 15px;
+    padding: 20px 50px;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5em;
+    font-family: 'Abel', sans-serif;
+    text-decoration: none;
+    padding: 21px 5px;
+}
+
+.navbar a:hover {
+    background-color: #104f55;
+    color: white;
+
+}
+
+.navbar i {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.navbar i:hover {
+    color: #4568f9;
+}
+
+.logo {
+    margin: 0px;
+    font-family: 'Lexend', sans-serif !important;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.icon {
+    width: fit-content;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+
+#toggler,
+.navbar label {
+    display: none;
+}
+
+/* navbar-end */
+
+
+/* banner */
+#banner {
+    margin: 100px 0;
+}
+
+.hero {
+    background-color: gray;
+}
+
+.hero_container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hero-text-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 4em;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.hero_bg_image {
+    display: block;
+    position: relative;
+}
+
+.hero-text-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.hero-text-center a{
+    font-weight: bold;
+    background: #fff;
+    padding: 1em 2em;
+    border-radius: 3em;
+    color: #122CD6;
+    text-decoration: none;
+    border: 2px solid #122CD6;
+}
+
+.hero-text-center a:hover{
+    background-color: #122cd68f;
+    color: white;
+    box-shadow: 0 0.2em 1em #1e1f44;
+    transition: all 0.2s ease;
+    transform: translateY(0.2em);
+}
+/* banner-end */
+
+/* body  */
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+  }
+  .header h1{
+    font-size: 2em;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+/* body -end */
+
+/* popular post  */
+
+.tag a{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+/* popular post-end */
+
+/* follow me  */
+.social {
+    display: flex;
+    flex-direction: row;
+}
+
+.card .bi {
+    font-size: 1.5em;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+/* follow me -end */
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: rgb(75, 75, 75);
+    margin-top: 20px;
+    color: white;
+}
+
+.footer span {
+    color: #f6f945;
+}
+/* footer-end */
